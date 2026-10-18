@@ -1,36 +1,34 @@
-import Navbar from "@/components/layout/Navbar";
-import Footer2 from "@/components/layout/Footer2";
-import HeroSlider from "@/components/sections/HeroSlider";
-import EventsSection from "@/components/sections/EventsSection";
-import WelcomeSection from "@/components/sections/WelcomeSection";
-import AboutSection from "@/components/sections/AboutSection";
-import QuoteSection from "@/components/sections/QuoteSection";
-import MinistriesSection from "@/components/sections/MinistriesSection";
-import StatsSection from "@/components/sections/StatsSection";
-import SermonsSection from "@/components/sections/SermonsSection";
-import PastorsSection from "@/components/sections/PastorsSection";
-import TestimonialsSection from "@/components/sections/TestimonialsSection";
-import ContactCTASection from "@/components/sections/ContactCTASection";
-import BlogSection from "@/components/sections/BlogSection";
+import Hero from "@/components/home/Hero";
+import VisitStrip from "@/components/home/VisitStrip";
+import Welcome from "@/components/home/Welcome";
+import Pillars from "@/components/home/Pillars";
+import VerseOfTheDay from "@/components/home/VerseOfTheDay";
+import Ministries from "@/components/home/Ministries";
+import LatestSermons from "@/components/home/LatestSermons";
+import UpcomingEvents from "@/components/home/UpcomingEvents";
+import Testimonies from "@/components/home/Testimonies";
+import GiveAndPray from "@/components/home/GiveAndPray";
+import GalleryStrip from "@/components/home/GalleryStrip";
+import { getSermons } from "@/lib/youtube";
 
-export default function Home() {
+// Re-render hourly so past events drop off and new sermons appear.
+export const revalidate = 3600;
+
+export default async function Home() {
+  const sermons = await getSermons();
   return (
-    <main>
-      <Navbar />
-      <HeroSlider />
-      {/* <EventsSection /> */}
-      <WelcomeSection />
-      <AboutSection />
-      <QuoteSection />
-      <MinistriesSection />
-      {/* <StatsSection /> */}
-      {/* <PastorsSection /> */}
-      {/* <TestimonialsSection /> */}
-      <SermonsSection />
-      <ContactCTASection />
-      <BlogSection />
-      
-      <Footer2 />
-    </main>
+    <>
+      <Hero />
+      <VisitStrip />
+      <Welcome />
+      <Pillars />
+      <Ministries />
+      <VerseOfTheDay />
+      <LatestSermons sermons={sermons} />
+      <UpcomingEvents />
+      <GiveAndPray />
+      <Testimonies />
+      <GalleryStrip />
+    </>
   );
 }

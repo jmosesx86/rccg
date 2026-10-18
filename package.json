@@ -9,11 +9,11 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "libphonenumber-js": "^1.13.15",
     "lucide-react": "^0.460.0",
     "next": "^16.2.1",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "swiper": "^12.1.3"
+    "react-dom": "^19.2.0"
   },
   "devDependencies": {
     "@types/node": "^22",

@@ -1,0 +1,22 @@
+/** Intrinsic sizes of images in /public (used by next/image). */
+export const imageSizes: Record<string, [number, number]> = {
+  "/f01.jpg": [1350, 1080],
+  "/g01.jpg": [1080, 1350],
+  "/g02.jpg": [1080, 1350],
+  "/g03.jpg": [1080, 1350],
+  "/g04.jpg": [1080, 1350],
+  "/g05.jpg": [1080, 1350],
+  "/img01.jpg": [1350, 1080],
+  "/m01.jpg": [1080, 1350],
+  "/m02.jpg": [1080, 1350],
+  "/m03.jpg": [1080, 1350],
+  "/m04.jpg": [1080, 1350],
+  "/p01.jpg": [1080, 1350],
+  "/p02.jpg": [1920, 1080],
+  "/p03.jpg": [1920, 1080],
+  "/pst01.jpg": [1080, 1350],
+  "/bible.png": [80, 80],
+  "/dove.png": [80, 80],
+  "/logo.png": [250, 250],
+  "/loveus.png": [80, 80],
+};
